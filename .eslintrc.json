@@ -1,9 +1,12 @@
 {
   "extends": ["next/core-web-vitals", "next/typescript", "prettier"],
-  "plugins": ["check-file"],
+  "plugins": ["check-file", "n"],
   "rules": {
-    "no-unused-vars": "error",
-    "no-explicit-any": "error",
+    "prefer-arrow-callback": ["error"],
+    "prefer-template": ["error"],
+    "n/no-process-env": ["error"],
+    "no-unused-vars": ["error"],
+    "no-explicit-any": ["error"],
     "explicit-function-return-type": [
       "warn",
       {
@@ -11,8 +14,6 @@
         "allowTypedFunctionExpressions": true
       }
     ],
-    "prefer-arrow-callback": "error",
-    "prefer-template": "error",
     "check-file/filename-naming-convention": [
       "error",
       {
