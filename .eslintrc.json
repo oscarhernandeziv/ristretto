@@ -1,34 +1,24 @@
 {
   "extends": ["next/core-web-vitals", "next/typescript", "prettier"],
-  "plugins": ["check-file", "n"],
+  "plugins": ["check-file"],
   "rules": {
     "prefer-arrow-callback": ["error"],
     "prefer-template": ["error"],
-    "n/no-process-env": ["error"],
-    "no-unused-vars": ["error"],
-    "no-explicit-any": ["error"],
-    "explicit-function-return-type": [
-      "warn",
-      {
-        "allowExpression": true,
-        "allowTypedFunctionExpressions": true
-      }
-    ],
+    "semi": ["error"],
+    "quotes": ["error", "double"],
     "check-file/filename-naming-convention": [
       "error",
       {
         "**/*.{ts,tsx}": "KEBAB_CASE"
       },
       {
-        // ignore the middle extensions of the filename to support filename like bable.config.js or smoke.spec.ts
-        "ignoreMiddleExtensions": "true"
+        "ignoreMiddleExtensions": true
       }
     ],
     "check-file/folder-naming-convention": [
       "error",
       {
-        // all folders within src (except __tests__)should be named in kebab-case
-        "src/**/!(__tests__)": "KEBAB_CASE"
+        "src/**/!^[.*": "KEBAB_CASE"
       }
     ]
   }
