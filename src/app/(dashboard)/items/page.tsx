@@ -1,18 +1,11 @@
+import { Metadata } from "next";
 import { redirect } from "next/navigation";
 
-import { ProductCatalog } from "@/features/items/components/product-catalog";
-import { getUser } from "@/lib/queries/user";
+export const metadata: Metadata = {
+  title: "Item List",
+  description: "View and manage items.",
+};
 
-export default async function ItemsPage() {
-  const user = await getUser();
-  if (!user) {
-    redirect("/sign-in");
-  }
-
-  return (
-    <div>
-      <h1 className="text-2xl font-bold tracking-tight">Product Database</h1>
-      <ProductCatalog />
-    </div>
-  );
+export default function ItemsPage() {
+  redirect("/items/products");
 }
