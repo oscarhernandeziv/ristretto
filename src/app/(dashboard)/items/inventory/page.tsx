@@ -7,10 +7,10 @@ export const metadata: Metadata = {
 
 export default function InventoryOnHandPage() {
   return (
-    <div className="flex flex-col p-6">
+    <div className="flex flex-col px-4 py-2">
       <div className="flex items-center justify-between">
         <div className="space-y-1">
-          <h2 className="text-2xl font-semibold tracking-tight">
+          <h2 className="text-2xl font-bold tracking-tight">
             Inventory On-Hand
           </h2>
           <p className="text-sm text-muted-foreground">

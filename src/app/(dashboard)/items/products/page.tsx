@@ -1,9 +1,11 @@
 import { Metadata } from "next";
+import { redirect } from "next/navigation";
 
 import ItemsTemplate from "@/app/(dashboard)/items/template";
+import { TableFooter } from "@/components/layout/table-footer";
 import { ProductCatalog } from "@/features/items/product-catalog";
-import { TableFooter } from "@/features/items/table-footer";
-import { type SortColumn, type SortOrder, getItems } from "@/lib/queries/items";
+import { type SortColumn, type SortOrder, getItems } from "@/lib/queries/item";
+import { getUser } from "@/lib/queries/user";
 
 export const metadata: Metadata = {
   title: "Product List",
@@ -42,6 +44,11 @@ export default async function ProductsPage({
     searchTerm: getSearchParam(resolvedParams?.search),
   };
 
+  const user = await getUser();
+  if (!user) {
+    return redirect("/sign-in");
+  }
+
   try {
     const { items, totalPages } = await getItems(params);
 
@@ -55,7 +62,7 @@ export default async function ProductsPage({
           />
         }
       >
-        <div className="flex min-h-0 flex-1">
+        <div>
           <ProductCatalog
             items={items}
             currentPage={params.page}

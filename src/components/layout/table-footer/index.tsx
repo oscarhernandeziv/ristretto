@@ -51,7 +51,7 @@ export function TableFooter({
   };
 
   return (
-    <div className="flex items-center justify-between px-4 py-1.5">
+    <div className="sticky bottom-0 flex items-center justify-between border-t bg-background px-4 py-2">
       <div className="flex items-center gap-2">
         <Select
           value={String(itemsPerPage)}

@@ -10,7 +10,7 @@ export default function ItemsTemplate({
   footer,
 }: ItemsTemplateProps) {
   return (
-    <div className="flex h-full min-h-0 flex-col">
+    <div className="flex h-full flex-col">
       <main className="flex-1 overflow-auto">{children}</main>
       <footer className="border-t bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
         {footer}

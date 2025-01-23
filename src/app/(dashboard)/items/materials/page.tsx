@@ -7,12 +7,10 @@ export const metadata: Metadata = {
 
 export default function MaterialListPage() {
   return (
-    <div className="flex flex-col p-6">
+    <div className="flex flex-col px-4 py-2">
       <div className="flex items-center justify-between">
         <div className="space-y-1">
-          <h2 className="text-2xl font-semibold tracking-tight">
-            Material List
-          </h2>
+          <h2 className="text-2xl font-bold tracking-tight">Material List</h2>
           <p className="text-sm text-muted-foreground">
             View and manage material items in your inventory.
           </p>
