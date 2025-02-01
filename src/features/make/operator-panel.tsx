@@ -368,6 +368,8 @@ export default function OperatorPanel() {
               <Button
                 variant="destructive"
                 className="h-18 rounded-[0.3rem] p-4 [&_svg]:!h-8 [&_svg]:!w-8"
+                onClick={() => setReportDowntimeOpen(true)}
+                disabled={!selectedLineId}
               >
                 <div className="flex flex-col items-center gap-4">
                   <Unlink />

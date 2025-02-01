@@ -6,13 +6,10 @@ import { usePathname } from "next/navigation";
 
 import {
   BarChart,
+  Calendar,
   Database,
   Factory,
-  FileText,
   LucideIcon,
-  ShoppingCart,
-  TruckIcon,
-  Users,
   Wrench,
 } from "lucide-react";
 
@@ -43,6 +40,29 @@ interface Route {
 
 const routes: Route[] = [
   {
+    href: "/plan",
+    label: "Plan",
+    icon: Calendar,
+    description: "Product and specification management",
+    subItems: [
+      {
+        href: "/plan/forecast",
+        label: "Forecast",
+        description: "Create and manage production forecasts",
+      },
+      {
+        href: "/plan/schedule",
+        label: "Schedule",
+        description: "Schedule production runs and manage capacity",
+      },
+      {
+        href: "/plan/orders",
+        label: "Orders",
+        description: "Manage customer orders and production demands",
+      },
+    ],
+  },
+  {
     href: "/make",
     label: "Make",
     icon: Factory,
@@ -66,48 +86,25 @@ const routes: Route[] = [
     ],
   },
   {
-    href: "/sell",
-    label: "Sell",
-    icon: ShoppingCart,
-    description: "Manage orders and customer information",
+    href: "/track",
+    label: "Track",
+    icon: BarChart,
+    description: "Performance metrics and reporting",
     subItems: [
       {
-        href: "/sell/customers",
-        label: "Customers",
-        description: "Manage customer information and relationships",
+        href: "/track/reports",
+        label: "Reports",
+        description: "Generate and view business reports",
       },
       {
-        href: "/sell/orders",
-        label: "Orders",
-        description: "View and manage customer orders",
+        href: "/track/analytics",
+        label: "Analytics",
+        description: "Analyze business performance metrics",
       },
       {
-        href: "/sell/quotes",
-        label: "Quotes",
-        description: "Create and manage customer quotes",
-      },
-    ],
-  },
-  {
-    href: "/buy",
-    label: "Buy",
-    icon: TruckIcon,
-    description: "Handle inventory and purchasing",
-    subItems: [
-      {
-        href: "/buy/purchasing",
-        label: "Purchasing",
-        description: "Create and manage purchase orders",
-      },
-      {
-        href: "/buy/suppliers",
-        label: "Suppliers",
-        description: "Manage supplier information and relationships",
-      },
-      {
-        href: "/buy/receiving",
-        label: "Receiving",
-        description: "Handle incoming shipments and materials",
+        href: "/track/dashboard",
+        label: "Dashboard",
+        description: "View key performance indicators",
       },
     ],
   },
@@ -154,75 +151,6 @@ const routes: Route[] = [
         href: "/items/inventory",
         label: "Inventory",
         description: "View stock levels and locations",
-      },
-    ],
-  },
-  {
-    href: "/insights",
-    label: "Insights",
-    icon: BarChart,
-    description: "Performance metrics and reporting",
-    subItems: [
-      {
-        href: "/insights/reports",
-        label: "Reports",
-        description: "Generate and view business reports",
-      },
-      {
-        href: "/insights/analytics",
-        label: "Analytics",
-        description: "Analyze business performance metrics",
-      },
-      {
-        href: "/insights/dashboard",
-        label: "Dashboard",
-        description: "View key performance indicators",
-      },
-    ],
-  },
-  {
-    href: "/people",
-    label: "People",
-    icon: Users,
-    description: "Schedule and manage staff",
-    subItems: [
-      {
-        href: "/people/employees",
-        label: "Employees",
-        description: "Manage employee information",
-      },
-      {
-        href: "/people/schedule",
-        label: "Schedule",
-        description: "View and manage work schedules",
-      },
-      {
-        href: "/people/teams",
-        label: "Teams",
-        description: "Organize and manage team structures",
-      },
-    ],
-  },
-  {
-    href: "/docs",
-    label: "Docs",
-    icon: FileText,
-    description: "Documentation and procedures",
-    subItems: [
-      {
-        href: "/docs/procedures",
-        label: "Procedures",
-        description: "Standard operating procedures",
-      },
-      {
-        href: "/docs/manuals",
-        label: "Manuals",
-        description: "Equipment and process manuals",
-      },
-      {
-        href: "/docs/guides",
-        label: "Guides",
-        description: "Training and reference guides",
       },
     ],
   },
